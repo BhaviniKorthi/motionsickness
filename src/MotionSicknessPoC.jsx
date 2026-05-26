@@ -88,8 +88,8 @@ export default function MotionSicknessPoC() {
                     // atan2(dy, dx) where dx is positive for level head
                     // For right tilt (subject's right), Right Eye (263) is lower (larger y)
                     // Left Eye (33) is higher (smaller y). dy = 33.y - 263.y is negative.
-                    // We want right tilt to be positive for HUD rotation
-                    const roll = -Math.atan2(dy, dx); 
+                    // We want left tilt to be positive to match the mirrored video and 3D scene
+                    const roll = Math.atan2(dy, dx); 
                     setCurrentHeadRoll(roll);
                 }
             }
